@@ -2,16 +2,15 @@ var fs = require("fs");
 var filesname = "index.html"
 
 var express = require('express');
-var data = fsreadFileSync(filesname,"utf8");
-var buffer = new Buffer(data.size)
-	var data1 = buffer.toString(buffer);
+
+var data = fs.readFileSync(filesname,"utf8");
 
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
 
 
-  response.send(data1);
+  response.send(data);
 });
 
 var port = process.env.PORT || 5000;
